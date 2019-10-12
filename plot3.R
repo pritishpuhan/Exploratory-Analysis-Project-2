@@ -1,11 +1,12 @@
 ## Read the file
 SCC <- readRDS("C:/Users/Pritish Puhan/Downloads/exdata_data_NEI_data/summarySCC_PM25.rds")
-tot.emissions.type <- SCC %>% 
+baltimore.emissions <- SCC %>% 
     subset(fips == "24510") %>%
     group_by(year, type) %>%
     summarize(Total.Emissions.Type = sum(Emissions, na.rm = TRUE))
 
-emissions.type <- ggplot(data = tot.emissions.type, aes(year, Total.Emissions.Type))
+png(filename = "plot3.png")
+emissions.type <- ggplot(data = baltimore.emissions, aes(year, Total.Emissions.Type))
 
 emissions.type <- emissions.type + 
     geom_point(color = "red", 
@@ -17,3 +18,4 @@ emissions.type <- emissions.type +
     ggtitle("Total Annual Emissions in Baltimore by Year")
 
 emissions.type
+dev.off()
