@@ -19,3 +19,6 @@ emissions.type <- emissions.type +
 
 emissions.type
 dev.off()
+
+
+## All source type have shown decrease from 1999 to 2008 with the exception of "point" source
