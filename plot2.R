@@ -15,3 +15,11 @@ pch = 2,
 lwd = 3,
 col = "red"))
 dev.off()
+
+
+## Answer
+
+baltimore.emissionse.2008 <- baltimore.emissions[baltimore.emissions$year == 2008, 2]
+baltimore.emissions.1999 <- baltimore.emissions[baltimore.emissions$year == 1999, 2]
+
+delta.baltimore.emissions <- baltimore.emissions.2008 - baltimore.emissions.1999
